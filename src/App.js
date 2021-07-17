@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from "react-router-dom";
+import UsersPage from "./pages/Users/UsersPage";
+import UserPage from "./pages/User/UserPage";
+import AlbumPage from "./pages/Album/AlbumPage";
+import PostPage from "./pages/Post/PostPage";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <Switch>
+        <Route exact path="/" component={UsersPage} />
+        <Route exact path="/user/:userId" component={UserPage} />
+        <Route exact path="/user/:userId/post/:postId" component={PostPage} />
+        <Route exact path="/album/:albumId" component={AlbumPage} />
+      </Switch>
+    </ChakraProvider>
   );
 }
 
