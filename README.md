@@ -28,12 +28,12 @@
 # install dependencies
 $ npm install
 
+# run test
+$ npm run test
+
 # serve with hot reload at localhost:3000
 $ npm run start
 
 # build for production
 $ npm run build
-
-# build for production
-$ npm run test
 ```
